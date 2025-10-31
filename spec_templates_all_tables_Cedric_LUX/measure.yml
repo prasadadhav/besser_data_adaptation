@@ -1,0 +1,46 @@
+# Spec template for table: measure
+# Generated from ai_sandbox_PSA_16_Oct_2025.db
+# Map your CSV columns to DB columns below.
+# mode:
+#   - 'insert'  → always insert
+#   - 'upsert'  → requires a UNIQUE or PRIMARY KEY on 'key' columns
+
+
+# python313 .\csv_to_sql_loader.py `
+#   --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric.db" `
+#   --csv ".\data_Cedric_Lux/2025-10-30T14-35_all.csv" `
+#   --spec ".\spec_templates_all_tables_Cedric_LUX\measure.yml"
+
+_metric: &MET "C2_RC"
+
+table: measure
+mode: upsert  # or 'insert'
+key: ['id']
+
+
+
+columns:
+  # id: type=INTEGER; PK; AUTOINC-LIKE
+  # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
+  # id: { from: "<CSV_id>", optional: true }
+  # value: type=VARCHAR(100); REQUIRED
+  value: { from: *MET, as_type: float }
+  # error: type=VARCHAR(100); REQUIRED
+  error: { const: "NA" }
+  # uncertainty: type=FLOAT; REQUIRED
+  uncertainty: { const: 999, as_type: float }
+  # unit: type=VARCHAR(100); REQUIRED
+  unit: { const: "percent" }
+  # metric_id: type=INTEGER; REQUIRED; FK→metric.id
+  # metric_id: { from: "<CSV_metric_id>" }
+  metric_id: { const: 26 }
+  # lookup:
+  #   table: "metric"
+  #   get: "id"
+  #   match:
+  #     name: { const: *MET } 
+
+  # observation_id: type=INTEGER; REQUIRED; FK→observation.id
+  observation_id: { const: "NA" }
+  # measurand_id: type=INTEGER; REQUIRED; FK→element.id
+  measurand_id: { const: 999, as_type: int }

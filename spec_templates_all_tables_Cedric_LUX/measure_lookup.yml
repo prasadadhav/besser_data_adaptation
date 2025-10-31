@@ -1,0 +1,32 @@
+
+table: measure
+mode: insert
+columns:
+  value:        { from: "metric_value", as_type: float }
+  error:        { const: "NA" }
+  uncertainty:  { const: 0.0, as_type: float }
+  unit:         { const: "score" }
+  metric_id:
+    lookup:
+      table: "metric"
+      get: "id"
+      match:
+        name:      { from: "metric_name" }
+        type_spec: { from: "metric_family" }
+      create_if_missing: false
+  observation_id:
+    lookup:
+      table: "observation"
+      get: "id"
+      match:
+        name: { from: "run_name" }
+      create_if_missing: false
+  measurand_id:
+    lookup:
+      table: "element"
+      get: "id"
+      match:
+        name: { from: "model_name" }
+      create_if_missing: true
+      defaults:
+        data: { const: "model" }

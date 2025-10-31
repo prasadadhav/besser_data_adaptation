@@ -1,0 +1,7 @@
+# specs/metric_catalog.yml
+table: metric
+mode: upsert
+key: ['name']
+columns:
+  name:    { from: "name" }
+  measure: { from: "measure" }

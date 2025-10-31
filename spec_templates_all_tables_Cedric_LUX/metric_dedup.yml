@@ -1,0 +1,25 @@
+# python313 - <<'PY'
+# import sqlite3
+# conn = sqlite3.connect(r".\ai_sandbox_PSA_16_Oct_2025_Cedric.db")
+# conn.executescript(open(r".spec_templates_all_tables_Cedric_LUX\add_unique_metric.sql","r",encoding="utf-8").read())
+# conn.close()
+# PY
+
+# python313 -c "import sqlite3; db=r'.\ai_sandbox_PSA_16_Oct_2025_Cedric.db'; sql=open(r'.\spec_templates_all_tables_Cedric_LUX\add_unique_metric.sql','r',encoding='utf-8').read(); con=sqlite3.connect(db); con.executescript(sql); con.close(); print('OK')"
+
+
+
+# python313 .\csv_to_sql_loader_v2.py `
+#   --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric.db" `
+#   --csv ".\data_Cedric_Lux\2025-10-30T14-35_all.csv" `
+#   --spec ".\spec_templates_all_tables_Cedric_LUX\metric_dedup.yml"
+
+
+table: metric
+mode: upsert
+key: ["type_spec","name"]
+pre_dedupe_on: ["type_spec","name"]
+columns:
+  type_spec:   { from: "metric_family" }
+  name:        { from: "metric_name" }
+  description: { const: "Auto-imported metric" }

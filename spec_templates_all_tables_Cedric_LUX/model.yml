@@ -1,0 +1,29 @@
+# Spec template for table: model
+# Generated from ai_sandbox_PSA_16_Oct_2025.db
+# Map your CSV columns to DB columns below.
+# mode:
+#   - 'insert'  → always insert
+#   - 'upsert'  → requires a UNIQUE or PRIMARY KEY on 'key' columns
+
+# python313 .\csv_to_sql_loader.py `
+#   --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric.db" `
+#   --csv ".\data_Cedric_Lux/2025-10-30T14-35_all.csv" `
+#   --spec ".\spec_templates_all_tables_Cedric_LUX\model.yml"
+
+table: model
+mode: upsert  # or 'insert'
+key: ['id']
+columns:
+  # id: type=INTEGER; PK; AUTOINC-LIKE; FK→element.id
+  # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
+  # id: { from: "<CSV_id>", optional: true }
+  # pid: type=VARCHAR(100); REQUIRED
+  pid: { const: "2025-10-30" }
+  # data: type=VARCHAR(100); REQUIRED
+  data: { from: "Size" }
+  # source: type=VARCHAR(100); REQUIRED
+  source: { from: "LLM" }
+  # licensing: type=VARCHAR(11); REQUIRED
+  licensing: { from: "Closed_Open" }
+  # dataset_id: type=INTEGER; REQUIRED; FK→dataset.id
+  dataset_id: { const: "Not Available" }
