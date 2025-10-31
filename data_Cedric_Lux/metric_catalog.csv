@@ -1,0 +1,31 @@
+name,measure
+A1 Grammar,percent
+A2 Grammar,percent
+A1_LC,percent
+A2_LC,percent
+A1_RC,percent
+A2_RC,percent
+A1 vocab,percent
+A2 vocab,percent
+A1 Total,percent
+A2 Total,percent
+B1 Grammar,percent
+B2 Grammar,percent
+B1_LC,percent
+B2_LC,percent
+B1_RC,percent
+B2_RC,percent
+B1 vocab,percent
+B2 vocab,percent
+B1 Total,percent
+B2 Total,percent
+C1 Grammar,percent
+C2 Grammar,percent
+C1_LC,percent
+C2_LC,percent
+C1_RC,percent
+C2_RC,percent
+C1 vocab,percent
+C2 vocab,percent
+C1 Total,percent
+C2 Total,percent
