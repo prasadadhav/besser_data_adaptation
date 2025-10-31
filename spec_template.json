@@ -1,0 +1,16 @@
+
+{
+  "table": "observations",
+  "mode": "upsert",
+  "key": ["name"],
+  "columns": {
+    "name":       {"from": "run_name", "transform": "strip"},
+    "tool_name":  {"const": "eval-harness"},
+    "created_at": {"from": "timestamp", "transform": "strip"},
+    "dataset_id": {"from": "dataset_id", "as_type": "int"},
+    "project_id": {"from": "project_id", "as_type": "int"},
+    "notes":      {"expr": "f\"seed={row['seed']} | prompt={row['prompt_name']}\""},
+    "accuracy":   {"from": "acc", "as_type": "float"},
+    "f1_score":   {"from": "f1", "as_type": "float"}
+  }
+}
