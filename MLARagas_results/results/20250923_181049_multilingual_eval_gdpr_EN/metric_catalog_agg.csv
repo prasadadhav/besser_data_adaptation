@@ -1,0 +1,13 @@
+name,measure
+total_rows_lang,count
+unique_strategies_lang,count
+avg_answer_relevancy,percent
+avg_context_precision,percent
+avg_context_recall,percent
+avg_faithfulness,percent
+avg_noise_sensitivity,percent
+count_answer_relevancy,count
+count_context_precision,count
+count_context_recall,count
+count_faithfulness,count
+count_noise_sensitivity,count
