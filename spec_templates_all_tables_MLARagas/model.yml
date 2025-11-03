@@ -13,12 +13,12 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # pid: type=VARCHAR(100); REQUIRED
-  pid: { from: "<CSV_pid>" }
+  pid: { const: "2025-09-23T18:10:49.398273" }
   # data: type=VARCHAR(100); REQUIRED
-  data: { from: "<CSV_data>" }
+  data: { const: "test_suites/gdpr_EN.csv", }
   # source: type=VARCHAR(100); REQUIRED
-  source: { from: "<CSV_source>" }
+  source: { const: "MLARagas" }
   # licensing: type=VARCHAR(11); REQUIRED
-  licensing: { from: "<CSV_licensing>" }
+  licensing: { const: "Unknown" }
   # dataset_id: type=INTEGER; REQUIRED; FK→dataset.id
-  dataset_id: { from: "<CSV_dataset_id>" }
+  dataset_id: { const: "20250923_170848-dd728bf1" }

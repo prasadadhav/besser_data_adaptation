@@ -13,6 +13,6 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # name: type=VARCHAR(100); REQUIRED
-  name: { from: "<CSV_name>" }
+  name: { from: "name" }
   # description: type=VARCHAR(100); REQUIRED
-  description: { from: "<CSV_description>" }
+  description: { from: "measure" }
