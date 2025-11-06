@@ -12,11 +12,12 @@ columns:
   # id: type=INTEGER; PK; AUTOINC-LIKE
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
+  id: { const: 1, as_type: int }
   # source: type=VARCHAR(100); REQUIRED
-  source: { from: "<CSV_source>" }
+  source: { const: "LIST" }
   # version: type=VARCHAR(100); REQUIRED
-  version: { from: "<CSV_version>" }
+  version: { const: "NA" }
   # name: type=VARCHAR(100); REQUIRED
-  name: { from: "<CSV_name>" }
+  name: { const: "mlabite" }
   # licensing: type=VARCHAR(11); REQUIRED
-  licensing: { from: "<CSV_licensing>" }
+  licensing: { const: "Open-source" }

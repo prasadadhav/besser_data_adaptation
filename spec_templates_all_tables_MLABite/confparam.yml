@@ -13,12 +13,12 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # param_type: type=VARCHAR(100); REQUIRED
-  param_type: { const: "Not Available" }
+  param_type: { const: "NA" }
   # value: type=VARCHAR(100); REQUIRED
-  value: { from: "Language" }
+  value: { from: "confparam_value" }
   # conf_id: type=INTEGER; REQUIRED; FK→configuration.id
-  conf_id: { const: 999, as_type: int }
+  conf_id: { const: 1, as_type: int }
   # name: type=VARCHAR(100); REQUIRED
-  name: { const: "inputLanguage" }
+  name: { from: "confparam_name" }
   # description: type=VARCHAR(100); REQUIRED
-  description: { const: "Not Available" }
+  description: { const: "NA" }

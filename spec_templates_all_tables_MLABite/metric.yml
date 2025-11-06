@@ -13,8 +13,8 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # type_spec: type=VARCHAR(50); REQUIRED
-  type_spec: { from: "<CSV_type_spec>" }
+  type_spec: { const: "NA" }
   # name: type=VARCHAR(100); REQUIRED
-  name: { from: "<CSV_name>" }
+  name: { from: "metric_name" }
   # description: type=VARCHAR(100); REQUIRED
-  description: { from: "<CSV_description>" }
+  description: { from: "metric_description" }

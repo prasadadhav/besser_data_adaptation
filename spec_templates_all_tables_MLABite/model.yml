@@ -17,7 +17,7 @@ columns:
   # data: type=VARCHAR(100); REQUIRED
   data: { const: "Not Available" }
   # source: type=VARCHAR(100); REQUIRED
-  source: { const: "OpenAI API" }
+  source: { from: "Model" }
   # licensing: type=VARCHAR(11); REQUIRED
   licensing: { const: "Proprietary" }
   # dataset_id: type=INTEGER; REQUIRED; FK→dataset.id
