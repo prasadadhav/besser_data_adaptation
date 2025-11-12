@@ -59,6 +59,11 @@ python313 .\csv_to_sql_loader.py `
   --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
   --csv ".\data_Cedric_Lux\metric_catalog.csv" `
   --spec ".\spec_templates_all_tables_Cedric_LUX\metric.yml"
+  
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\element.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\element.yml"
 #-------------------------------------------
 
 
