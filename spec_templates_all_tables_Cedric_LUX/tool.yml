@@ -13,10 +13,10 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # source: type=VARCHAR(100); REQUIRED
-  source: { from: "<CSV_source>" }
+  source: { from: "LLM" }
   # version: type=VARCHAR(100); REQUIRED
-  version: { from: "<CSV_version>" }
+  version: { const: "https://llmluxapp-a7tpfn2c5tgk8pqzecquvh.streamlit.app/" }
   # name: type=VARCHAR(100); REQUIRED
-  name: { from: "<CSV_name>" }
+  name: { from: "LLM" }
   # licensing: type=VARCHAR(11); REQUIRED
-  licensing: { from: "<CSV_licensing>" }
+  licensing: { from: "Closed_Open" }

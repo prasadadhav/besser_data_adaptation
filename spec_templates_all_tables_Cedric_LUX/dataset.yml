@@ -13,12 +13,12 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # source: type=VARCHAR(100); REQUIRED
-  source: { from: "<CSV_source>" }
+  source: { const: "INL" }
   # version: type=VARCHAR(100); REQUIRED
-  version: { from: "<CSV_version>" }
+  version: { const: "Not available" }
   # licensing: type=VARCHAR(11); REQUIRED
-  licensing: { from: "<CSV_licensing>" }
+  licensing: { const: "Closed" }
   # type: type=VARCHAR(10); REQUIRED
-  type: { from: "<CSV_type>" }
+  type: { const: "Not available" }
   # datashape_id: type=INTEGER; REQUIRED; FK→datashape.id
-  datashape_id: { from: "<CSV_datashape_id>" }
+  datashape_id: { const: 1 }

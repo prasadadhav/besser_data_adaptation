@@ -13,8 +13,8 @@ columns:
   # Tip: usually omit mapping for autoincrement PKs and let the DB assign them.
   # id: { from: "<CSV_id>", optional: true }
   # status: type=VARCHAR(10); REQUIRED
-  status: { from: "<CSV_status>" }
+  status: { const: "Done" }
   # project_id: type=INTEGER; REQUIRED; FK→project.id
-  project_id: { from: "<CSV_project_id>" }
+  project_id: { const: "1" }
   # config_id: type=INTEGER; REQUIRED; FK→configuration.id
-  config_id: { from: "<CSV_config_id>" }
+  config_id: { const: "Not available" }
