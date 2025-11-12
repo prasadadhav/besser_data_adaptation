@@ -1,0 +1,164 @@
+# I need to load the specific python version
+
+Set-Alias python313 "C:\Users\adhav\AppData\Local\Programs\Python\Python313\python.exe"
+python313 --version
+
+
+#We have One project, so created a project.csv
+
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\project.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\project.yml"
+
+
+#-------------------------------------------
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\datashape.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\datashape.yml"
+  
+
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\2025-10-30T14-35_all.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\dataset.yml"
+#-------------------------------------------
+
+
+
+
+
+
+#-------------------------------------------
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\2025-10-30T14-35_all.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\tool.yml"
+  
+# model is not dependent on anything
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\2025-10-30T14-35_all.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\model.yml"
+
+#We have one evaluation for each model i.e each row
+
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\2025-10-30T14-35_all.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\evaluation.yml"
+#-------------------------------------------
+
+
+
+
+
+#-------------------------------------------
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\metric_catalog.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\metric.yml"
+#-------------------------------------------
+
+
+
+
+#-------------------------------------------
+This script will generate a csv that will be used to populated the observation table
+
+
+
+$py  = "C:\Users\adhav\AppData\Local\Programs\Python\Python313\python.exe"
+$db  = ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db"
+$spec = ".\spec_templates_all_tables_Cedric_LUX\observation.yml"
+$loader = ".\csv_to_sql_loader.py"
+
+& $py .\build_and_load_observations_from_db.py `
+  --db $db `
+  --spec $spec `
+  --loader $loader `
+  --python $py `
+  --dataset-policy min_id `
+  --observer "system" `
+  --when "2025-10-30T14:35:00Z" `
+  --description "Lux CEFR eval import"
+
+
+python313 .\csv_to_sql_loader.py `
+  --db ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db" `
+  --csv ".\data_Cedric_Lux\_tmp_observations_from_db.csv" `
+  --spec ".\spec_templates_all_tables_Cedric_LUX\observation.yml"
+
+
+
+
+#-------------------------------------------
+
+
+$py  = "C:\Users\adhav\AppData\Local\Programs\Python\Python313\python.exe"
+$db  = ".\ai_sandbox_PSA_16_Oct_2025_Cedric_v2.db"
+$csv = ".\data_Cedric_Lux\2025-10-30T14-35_all.csv"
+$spec = ".\spec_templates_all_tables_Cedric_LUX\measure.yml"
+$loader = ".\csv_to_sql_loader.py"
+
+& $py .\build_and_load_measures_from_db_and_csv.py `
+  --db $db `
+  --csv $csv `
+  --spec $spec `
+  --loader $loader `
+  --python $py `
+  --header-style bracketed `
+  --pairing by_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
